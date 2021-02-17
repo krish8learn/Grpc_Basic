@@ -1,0 +1,1 @@
+protoc Emp.proto --go_out=plugins=grpc:.

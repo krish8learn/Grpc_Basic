@@ -1,0 +1,23 @@
+syntax = "proto3";
+package office;
+option go_package = "Emppb";
+
+message Employee{
+    int32 Employee_id = 1;
+    string Employee_name = 2;
+    string Employee_mail = 3;
+    string Employee_mobile = 4;
+}
+
+message EmpRequest{
+    Employee input = 1;
+}
+
+message EmpResponse{
+    Employee output = 1;
+}
+
+service EmpService{
+    //unary
+    rpc Emp(EmpRequest) returns (EmpResponse){};
+}
