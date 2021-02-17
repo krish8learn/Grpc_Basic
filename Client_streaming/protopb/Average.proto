@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package Client_streaming;
+option go_package = "protopb";
+
+message Request{
+    int32 number = 1;
+}
+
+message Response{
+    double Avg = 1;
+}
+
+service Average{
+    rpc Average(stream Request) returns (Response) {};
+}
