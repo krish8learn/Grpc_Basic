@@ -1,0 +1,17 @@
+syntax = "proto3";
+package GRPC_Practice;
+option go_package = "proto";
+
+message Request{
+    int32 Input= 1;
+}
+
+message Response{
+    int32 output = 1;
+}
+
+service Squareroot{
+    //unary streaming
+    //The error being sent is of type INVALID_ARGUMENT
+    rpc Squareroot(Request) returns (Response) {};
+}
