@@ -1,0 +1,15 @@
+syntax = "proto3";
+package Bi_Streaming;
+option go_package = "protopb";
+
+message Request{
+    int32 Input = 1;
+}
+
+message Response{
+    int32 Output = 1;
+}
+
+service Findmax{
+    rpc Findmax(stream Request) returns (stream Response){};
+}
